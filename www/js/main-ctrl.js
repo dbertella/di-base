@@ -14,6 +14,15 @@
 			$state.go('app.' + nextState);
 		};
 
+		// $scope.goToVideo = function () {
+		// 	var video = document.querySelector('video');
+		// 	video.load();
+		// 	$state.go('video');
+		// };
+
+		$scope.select = function (index) {
+			$scope.selected = index;
+		};
 
 		// modals
 		// Modal 1 - attacco
@@ -33,7 +42,7 @@
 		});
 
 		// Modal 3 - avversari
-		$ionicModal.fromTemplateUrl('templates/modal/difesa.html', {
+		$ionicModal.fromTemplateUrl('templates/modal/avversari.html', {
 		    id: '3', // We need to use and ID to identify the modal that is firing the event!
 		    scope: $scope
 		}).then(function(modal) {
@@ -41,7 +50,7 @@
 		});
 
 		// Modal 4 - trattamento
-		$ionicModal.fromTemplateUrl('templates/modal/difesa.html', {
+		$ionicModal.fromTemplateUrl('templates/modal/trattamento.html', {
 		    id: '4', // We need to use and ID to identify the modal that is firing the event!
 		    scope: $scope
 		}).then(function(modal) {

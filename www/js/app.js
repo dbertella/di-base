@@ -18,19 +18,6 @@ angular.module('starter', ['ionic'])
   });
 })
 .config(function($stateProvider, $urlRouterProvider) {
-  // $stateProvider
-  //   .state('home', {
-  //     url: "/",
-  //     templateUrl: "templates/video.html",
-  //     controller: 'videoCtrl'
-  //   })
-  //   .state('slide', {
-  //     url: "/:slideId",
-  //     tempalteUrl: "templates/slide.html",
-  //     controller: 'mainCtrl'
-  //   });
-  // // if none of the above states are matched, use this as the fallback
-  // $urlRouterProvider.otherwise('/');
   $stateProvider
 
     .state('app', {
@@ -39,14 +26,10 @@ angular.module('starter', ['ionic'])
       templateUrl: "templates/home.html",
       controller: 'mainCtrl as main'
     })
-    .state('app.video', {
+    .state('video', {
       url: "/video",
       templateUrl: "templates/video.html",
       controller: 'videoCtrl'
-    })
-    .state('app.rcp', {
-      url: "/rcp",
-      templateUrl: "templates/rcp.html"
     })
     .state('app.slide-1', {
       url: "/slide-1",
@@ -77,5 +60,5 @@ angular.module('starter', ['ionic'])
       templateUrl: "templates/slide-7.html"
     });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/video');
+  $urlRouterProvider.otherwise('/video');
 });

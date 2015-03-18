@@ -1,0 +1,24 @@
+<ion-modal-view>
+  <div class="buttons right">
+    <button class="button button-clear" ng-click="closeModal(3)">Close</button>
+  </div>
+  <div class="middle avversari">
+    <h1><strong>Gli avversari ad alto rischio di carenza</strong></h1>
+
+    <p ng-class="{'selected' : selected == 1}" ng-click="select(1)">Scarsa esposizione solare<sup>1,2</sup></p><br>
+
+	<p ng-class="{'selected' : selected == 2}" ng-click="select(2)">Intensa pigmentazione cutanea<sup>1,3</sup></p><br>
+
+	<p ng-class="{'selected' : selected == 3}" ng-click="select(3)">Obesità<sup>1,3</sup></p><br>
+
+	<p ng-class="{'selected' : selected == 4}" ng-click="select(4)">Uso dei filtri solari<sup>3</sup></p><br>
+
+	<p ng-class="{'selected' : selected == 5}" ng-click="select(5)">Trattamenti farmacologici<br>
+	(per es. corticosteroidi a lungo termine, anticonvulsivanti, ecc.)<sup>1</sup></p><br>
+
+	<p ng-class="{'selected' : selected == 6}" ng-click="select(6)">Patologie dermatologiche estese<sup>1</sup><br>
+	(per es. psoriasi, dermatite atopica, vitiligine, ecc.)<sup>4</sup></p><br>
+
+	<p class="text-center" style="margin-top: 40px;">Per le condizioni di rischio consultare RCP Dibase</p>
+  </div>
+</ion-modal-view>

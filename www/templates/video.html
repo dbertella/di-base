@@ -1,16 +1,6 @@
 <!-- <video class="video-js vjs-default-skin vjs-big-play-centered vid" id="intro-video" data-setup='' controls> -->
-<div class="video-wrapper">
-	<video class="vid" id="intro-video" poster="media/images/poster.jpg" controls> 
+<div class="video-wrapper" ng-click="play()">
+	<video class="vid" id="intro-video" poster="media/images/poster.jpg"> 
 		<source src="media/video/video-calcio.mp4" type="video/mp4">
 	</video> 
 </div>
-<ion-pane on-swipe-left="main.onSwipeLeft('slide-2')" class="pane-slide-1">
-	<div class="wrapper">
-		<h1 class="title medium">
-			<strong>
-				<span class="red">Dibase 50.000 U.I.</span><br>
-				da oggi è in <span class="red big">A</span>!
-			</strong>
-		</h1>
-	</div>
-</ion-pane>
