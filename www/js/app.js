@@ -36,67 +36,45 @@ angular.module('starter', ['ionic'])
     .state('app', {
       url: "/app",
       abstract: true,
-      templateUrl: "templates/home.html"
+      templateUrl: "templates/home.html",
+      controller: 'mainCtrl as main'
     })
     .state('app.video', {
       url: "/video",
       templateUrl: "templates/video.html",
       controller: 'videoCtrl'
-      
+    })
+    .state('app.rcp', {
+      url: "/rcp",
+      templateUrl: "templates/rcp.html"
     })
     .state('app.slide-1', {
       url: "/slide-1",
-      templateUrl: "templates/slide-1.html",
-      controller: 'mainCtrl'
-      
+      templateUrl: "templates/slide-1.html"
     })
     .state('app.slide-2', {
       url: "/slide-2",
-      templateUrl: "templates/slide-2.html",
-      controller: 'mainCtrl'
-      
+      templateUrl: "templates/slide-2.html"
     })
     .state('app.slide-3', {
       url: "/slide-3",
-      templateUrl: "templates/slide-3.html",
-      controller: 'mainCtrl'
-      
+      templateUrl: "templates/slide-3.html"
     })
     .state('app.slide-4', {
       url: "/slide-4",
-      templateUrl: "templates/slide-4.html",
-      controller: 'mainCtrl'
-      
+      templateUrl: "templates/slide-4.html"
     })
     .state('app.slide-5', {
       url: "/slide-5",
-      templateUrl: "templates/slide-5.html",
-      controller: 'mainCtrl'
-      
+      templateUrl: "templates/slide-5.html"
     })
     .state('app.slide-6', {
       url: "/slide-6",
-      templateUrl: "templates/slide-6.html",
-      controller: 'mainCtrl'
-      
+      templateUrl: "templates/slide-6.html"
     })
     .state('app.slide-7', {
       url: "/slide-7",
-      templateUrl: "templates/slide-7.html",
-      controller: 'mainCtrl'
-      
-    })
-    .state('app.slide-8', {
-      url: "/slide-8",
-      templateUrl: "templates/slide-8.html",
-      controller: 'mainCtrl'
-      
-    })
-    .state('app.slide-9', {
-      url: "/slide-9",
-      templateUrl: "templates/slide-9.html",
-      controller: 'mainCtrl'
-      
+      templateUrl: "templates/slide-7.html"
     });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/video');
