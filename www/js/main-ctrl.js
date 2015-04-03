@@ -7,6 +7,8 @@
 
 		var vm = this;
 
+		vm.showMenu = false;
+		
 		vm.onSwipeLeft = function (nextState) {
 			$state.go('app.' + nextState);
 		};

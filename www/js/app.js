@@ -26,7 +26,7 @@ angular.module('starter', ['ionic'])
       templateUrl: "templates/home.html",
       controller: 'mainCtrl as main'
     })
-    .state('video', {
+    .state('app.video', {
       url: "/video",
       templateUrl: "templates/video.html",
       controller: 'videoCtrl'
@@ -60,5 +60,5 @@ angular.module('starter', ['ionic'])
       templateUrl: "templates/slide-7.html"
     });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/video');
+  $urlRouterProvider.otherwise('/app/video');
 });

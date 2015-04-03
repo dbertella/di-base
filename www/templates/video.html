@@ -1,5 +1,7 @@
 <!-- <video class="video-js vjs-default-skin vjs-big-play-centered vid" id="intro-video" data-setup='' controls> -->
-<div class="video-wrapper" ng-click="play()">
+<div class="video-wrapper" on-swipe-left="onSwipeLeft('slide-2')">
+	<div class="play" ng-click="play()"></div>
+	<div class="skip"><a href="#/app/slide-1"><strong>Skip</strong></a></div>
 	<video class="vid" id="intro-video" poster="media/images/poster.jpg"> 
 		<source src="media/video/video-calcio.mp4" type="video/mp4">
 	</video> 

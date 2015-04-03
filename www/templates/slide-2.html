@@ -1,14 +1,4 @@
-<ion-pane on-swipe-left="main.onSwipeLeft('slide-3')" on-swipe-right="main.onSwipeRight('slide-1')">
-	<div class="wrapper">
-		<h1 class="title medium">
-			<strong>
-				Scegli la nuova <span class="red">promessa</span><br>
-				con la migliore compliance <br>
-				sia in <a class="red" ng-click="openModal(1)">attacco</a> che in <a class="red" ng-click="openModal(2)">difesa</a>
-			</strong>
-		</h1>
-		<div class="text-center">
-			<img src="media/images/slide-1.jpg" alt="">
-		</div>
-	</div>
+<ion-pane on-swipe-left="main.onSwipeLeft('slide-3')" style="background: #fff url(media/images/slide2.jpg) center center no-repeat;">
+	 <a ng-click="openModal(1)" class="placeholder attacco"></a>
+	<a ng-click="openModal(2)" class="placeholder difesa"></a>
 </ion-pane>

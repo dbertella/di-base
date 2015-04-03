@@ -7388,6 +7388,9 @@ a.button {
   opacity: 0;
   transition-duration: 0s; }
 
+[nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"] {
+  background: #fff; }
+
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
@@ -7405,27 +7408,21 @@ body {
 .wrapper .big {
   font-size: 50px; }
 
-.slide-4 .small {
-  font-size: 26px; }
-
-.slide-4 .medium {
-  font-size: 32px; }
-
-.slide-4 .big {
-  font-size: 40px; }
-
 .wrapper {
   height: 580px;
   width: 80%;
   margin: 85px 10%; }
 
 .menu {
+  position: absolute;
+  top: calc(100% - 96px);
+  left: 50%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
@@ -7438,14 +7435,14 @@ body {
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  width: 96px;
-  height: 512px;
-  min-height: 500px;
-  margin-top: 100px;
+  height: 96px;
+  width: 512px;
+  min-height: 90px;
+  margin-top: 0;
   background: #c5c7c8;
   z-index: 99;
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
+  -webkit-transform: translate(-50%, 100%);
+  transform: translate(-50%, 100%);
   -webkit-animation-name: enter;
   animation-name: enter;
   -webkit-animation-duration: 0.5s;
@@ -7466,11 +7463,45 @@ body {
   position: relative;
   width: 100%;
   height: 0;
-  padding-bottom: 75%; }
+  padding-bottom: 75%;
+  background: #fff; }
   .video-wrapper video {
     position: absolute;
     height: 100%;
     width: 100%; }
+
+.play {
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  top: 380px;
+  left: 360px;
+  z-index: 999; }
+
+.skip {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 15px;
+  z-index: 999; }
+  .skip a {
+    display: block;
+    width: 180px;
+    height: 130px;
+    color: #fff;
+    text-indent: -9999px; }
+
+.placeholder {
+  display: block;
+  height: 50px;
+  width: 200px;
+  position: absolute; }
+  .placeholder.attacco {
+    top: 215px;
+    left: 320px; }
+  .placeholder.difesa {
+    top: 215px;
+    left: 650px; }
 
 .modal {
   top: 10%;
@@ -7494,6 +7525,14 @@ body {
     text-indent: -99999px;
     background: url(../media/images/close-button.jpg) center center no-repeat;
     z-index: 9999; }
+
+.fullscreen {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%; }
 
 .zoom-pane {
   width: 90%;
@@ -7520,72 +7559,26 @@ body {
     margin: 18px 0; }
     .avversari p:not(.text-center) {
       display: inline-block;
-      position: relative;
-      z-index: 1; }
-      .avversari p:not(.text-center):before {
-        content: '';
-        position: absolute;
-        top: -5px;
-        bottom: -5px;
-        left: -5px;
-        right: -5px;
-        background: rgba(0, 0, 0, 0.2);
-        -webkit-transform: scale(0, 1);
-        transform: scale(0, 1);
-        z-index: -1;
-        transition: -webkit-transform 0.3s cubic-bezier(0.76, 0.33, 0.42, 1.07);
-        transition: transform 0.3s cubic-bezier(0.76, 0.33, 0.42, 1.07);
-        -webkit-transform-origin: left center;
-        transform-origin: left center; }
-    .avversari p.selected:before {
-      -webkit-transform: scale(1);
-      transform: scale(1); }
-
-.slide-4 h1 {
-  margin-bottom: 80px; }
-.slide-4 .legenda {
-  margin-left: 200px;
-  -webkit-transform: scale(0);
-  transform: scale(0);
-  display: block;
-  -webkit-animation-name: bumpin;
-  animation-name: bumpin;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-delay: 3s;
-  animation-delay: 3s;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-  -webkit-animation-timing-function: cubic-bezier(0.76, 0.33, 0.42, 1.07);
-  animation-timing-function: cubic-bezier(0.76, 0.33, 0.42, 1.07);
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards; }
-  .slide-4 .legenda span {
-    display: inline-block;
-    height: 22px;
-    width: 24px;
-    margin-right: 10px;
-    background: url(../media/images/legenda-sprite.png) 0 0 no-repeat; }
-    .slide-4 .legenda span.verde {
-      background-position: 0 100%; }
+      position: relative; }
+    .avversari p.selected {
+      font-weight: 600; }
 
 .graph {
+  position: absolute;
+  top: 53%;
+  left: 50%;
   height: 58px;
   width: 680px;
   line-height: 58px;
-  position: relative;
-  left: 50%;
   -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  margin-top: 50px;
-  margin-bottom: 100px; }
+  transform: translateX(-50%); }
   .graph:after {
     content: '';
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
     background: #fff;
     -webkit-animation-name: goaway;
     animation-name: goaway;
@@ -7632,21 +7625,21 @@ body {
 
 @-webkit-keyframes enter {
   0% {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%); }
+    -webkit-transform: translate(-50%, 100%);
+    transform: translate(-50%, 100%); }
 
   100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0); } }
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); } }
 
 @keyframes enter {
   0% {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%); }
+    -webkit-transform: translate(-50%, 100%);
+    transform: translate(-50%, 100%); }
 
   100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0); } }
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); } }
 
 @-webkit-keyframes goaway {
   0% {
